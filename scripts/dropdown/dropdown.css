@@ -1,0 +1,115 @@
+.dropdown_text
+{
+	height: 12px;
+	text-align: left;
+	border-top: solid 1px #BDC7D8;
+	border-left: solid 1px #BDC7D8;
+	border-right: solid 1px #BDC7D8;
+	border-bottom: solid 1px #BDC7D8;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px; cursor: arrow;
+	color: #3B5998;	padding: 0px; width: 180px; 
+	background: white no-repeat right url(/webroot/web/images/icons/ddlist_16.gif);
+}
+.dropdown_table
+{
+	text-align: left;
+	position: absolute;
+	border-top: solid 1px #BDC7D8;
+	border-left: solid 2px #BDC7D8;
+	border-right: solid 2px #BDC7D8;
+	border-bottom: solid 2px #BDC7D8;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px; background: #FFFFFF;
+	height: 150px; overflow: scroll;
+}
+.dropdown_table a
+{
+	color: #3B5998;
+	text-decoration: none;
+	padding: 2px 6px 4px 6px;
+	width: 100%; cursor: arrow;
+}
+.dropdown_table a:link, .dropdown_table a:visited
+{
+	color: #3B5998;
+}
+.dropdown_table a:link:hover, .dropdown_table a:visited:hover
+{
+	color: #FFFFFF;
+	background: #0A246A;
+	text-decoration: none;
+}
+.classes_table
+{
+	text-align: left;
+	margin: 0; padding: 0;/*reset*/
+	position: absolute; width: auto;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px; display: none;
+	border-left: 1px solid #3B5998;
+	border-bottom: 3px solid #3B5998;
+}
+.classes_table ul
+{
+	margin: 0; padding: 0;/*reset*/
+}
+.classes_table ul li
+{
+	background: #ECEFF5; 
+	width: 180px; height: 20px;
+	border-top: solid 1px #FFFFFF;
+	border-right: solid 1px #3B5998;
+}
+.classes_table ul li a,
+.classes_table ul li a:link,
+.classes_table ul li a:visited
+{
+	display: block;
+	color: #3B5998;
+	text-decoration: none;
+	width: auto; height: 20px;
+	padding: 3px 18px 0px 8px;
+}
+.classes_table ul li a:link:hover, 
+.classes_table ul li a:visited:hover
+{
+	background: #3B5998;
+	color: #FFFFFF;
+}
+.classes_table ul li.rule
+{
+	max-height: 1px;  
+	display: none;
+}
+.classes_table_tab
+{
+	margin: 0; padding: 0;/*reset*/
+	color: #3B5998;
+	cursor: default;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 2px 8px 3px 8px;
+	background: #FFEEEE no-repeat url(/webroot/web/images/icons/arrow_9.gif);
+	background-position: right 4px;
+	max-height: 16px;
+}
+.classes_table_tab a,
+.classes_table_tab a:link,
+.classes_table_tab a:visited
+{
+	color: #3B5998;
+	cursor: default;
+	text-decoration: none;
+}
+.classes_span a,
+.classes_span a:link,
+.classes_span a:visited
+{
+	background: #3B5998 no-repeat url(/webroot/web/images/icons/arrow_13.gif);
+	background-position: right 6px;
+}
+.classes_span a#current
+{
+	background: blue no-repeat right url(/webroot/web/images/icons/arrow_8.gif);
+}

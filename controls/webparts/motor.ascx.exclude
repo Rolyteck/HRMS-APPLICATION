@@ -1,0 +1,958 @@
+﻿<%@ Control Language="VB" AutoEventWireup="false" CodeFile="motor.ascx.vb" Inherits="webroot_web_controls_webparts_motor" %>
+<tr>
+    <td class="pageFilterBox">
+        <div class="pageFilterBoxHeader">
+            <mb:ExpandingImageButton ID="ExpandingImageButton7" ExpandedAlternateText="Expand this node."
+                ContractedAlternateText="Close this node." CssClass="ExpandingImageButton" ControlToToggle="filterTable1"
+                ExpandedImageUrl="/webroot/web/images/icons/expanded_13.gif" ContractedImageUrl="/webroot/web/images/icons/expand_13.gif"
+                runat="server" EnableClientScript="true" />
+            <label for="_ctl0_ContentPlaceHolder1_ExpandingImageButton1_clicker" style="width: 96%;
+                cursor: hand">
+                <asp:Label ID="Label6" runat="server" Text=" "></asp:Label></label></div>
+        <asp:Panel ID="Panel6" runat="server">
+            <table id="Table6" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tbody>
+                    <tr>
+                        <td class="editColA">
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                        </td>
+                        <td class="editColD">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Entry Date
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtEntryDate" runat="server" CssClass="textboxDate"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfv1" runat="server" ControlToValidate="txtEntryDate"
+                                ErrorMessage="Entry Date is required!">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Effective Date
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtStartDate" runat="server" CssClass="textboxDate"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfv2" runat="server" ControlToValidate="txtStartDate"
+                                ErrorMessage="Effective Date is required!">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="editColC">
+                            Expiry Date
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtExpiryDate" runat="server" CssClass="textboxDate"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfv3" runat="server" ControlToValidate="txtExpiryDate"
+                                ErrorMessage="Expiry Date is required!">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                <asp:PlaceHolder ID="PlaceHolder1" runat="server" Visible="True">
+                    <tr>
+                        <td class="editColA">
+                            Endorsement No
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtEndorseNo" runat="server" CssClass="textbox">[AUTO]</asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfv4" runat="server" ControlToValidate="txtEndorseNo"
+                                ErrorMessage="Endorsement Number is required!">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="editColC">
+                            Endorsement Type
+                        </td>
+                        <td class="editColD">
+                            <asp:Label ID="lbEndorseType" runat="server" Font-Bold="True" ForeColor="Red" 
+                                                Text="Label"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </asp:PlaceHolder>
+                </tbody>
+            </table>
+        </asp:Panel>
+    </td>
+</tr>
+<tr>
+    <td class="pageFilterBox">
+        <div class="pageFilterBoxHeader">
+            <mb:ExpandingImageButton ID="ExpandingImageButton1" ExpandedAlternateText="Expand this node."
+                ContractedAlternateText="Close this node." CssClass="ExpandingImageButton" ControlToToggle="filterTable1"
+                ExpandedImageUrl="/webroot/web/images/icons/expanded_13.gif" ContractedImageUrl="/webroot/web/images/icons/expand_13.gif"
+                runat="server" EnableClientScript="true" />
+            <label for="_ctl0_ContentPlaceHolder1_ExpandingImageButton1_clicker" style="width: 96%;
+                cursor: hand">
+                <asp:Label ID="lbHeader2" runat="server" Text="Cover Details"></asp:Label></label></div>
+        <asp:Panel ID="filterTable1" runat="server">
+            <table id="section1" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tbody>
+                    <tr>
+                        <td class="editColA">
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                        </td>
+                        <td class="editColD">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Certificate No
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtCertNo" runat="server" CssClass="textbox">[AUTO]</asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfv6" runat="server" ControlToValidate="txtCertNo"
+                                ErrorMessage="Certificate Number is required!">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="editColC">
+                            Policy Number
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtPolicyNo" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Cover Type
+                        </td>
+                        <td class="editColB">
+                            <asp:DropDownList ID="cdbCoverType" runat="server" CssClass="dropdown">
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfv7" runat="server" 
+                                ControlToValidate="cdbCoverType" ErrorMessage="Cover Type is required!" 
+                                InitialValue="NULL">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="editColC">
+                            WAX Code
+                        </td>
+                        <td class="editColD">
+                            <asp:DropDownList ID="cdbWaxCode" runat="server" CssClass="dropdown">
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfv8" runat="server" 
+                                ControlToValidate="cdbWaxCode" ErrorMessage="WAX Code is required!" 
+                                InitialValue="NULL">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </asp:Panel>
+    </td>
+</tr>
+<tr>
+    <td class="pageFilterBox">
+        <div class="pageFilterBoxHeader">
+            <mb:ExpandingImageButton ID="ExpandingImageButton5" ExpandedAlternateText="Expand this node."
+                ContractedAlternateText="Close this node." CssClass="ExpandingImageButton" ControlToToggle="Panel4"
+                ExpandedImageUrl="/webroot/web/images/icons/expanded_13.gif" ContractedImageUrl="/webroot/web/images/icons/expand_13.gif"
+                runat="server" EnableClientScript="true" />
+            <label for="_ctl0_ContentPlaceHolder1_ExpandingImageButton1_clicker" style="width: 96%;
+                cursor: hand">
+                <asp:Label ID="Label4" runat="server" Text="Vehicle Details"></asp:Label></label>
+        </div>
+        <asp:Panel ID="Panel4" runat="server">
+            <table id="Table4" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tbody>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Vehicle Reg No
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtVehRegNo" runat="server" CssClass="textbox"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rvr2" runat="server" ControlToValidate="txtVehRegNo"
+                                ErrorMessage="Vehicle Reg. Number is required!">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="editColC">
+                            State of Issue
+                        </td>
+                        <td class="editColD">
+                            <asp:DropDownList ID="cbState" runat="server" CssClass="dropdown">
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rvr8" runat="server" ControlToValidate="cbState"
+                                ErrorMessage="State of Issue is required!" InitialValue="NULL">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Vehicle Type
+                        </td>
+                        <td class="editColB">
+                            <asp:DropDownList ID="cbVehType" runat="server" CssClass="dropdown">
+                                <asp:ListItem Value="NULL">- select -</asp:ListItem>
+                                <asp:ListItem Value="Jeep">Jeep</asp:ListItem>
+                                <asp:ListItem Value="Saloon Car">Saloon Car</asp:ListItem>
+                                <asp:ListItem Value="Wagon-Mini Bus">Wagon-Mini Bus</asp:ListItem>
+                                <asp:ListItem Value="Bus">Bus</asp:ListItem>
+                                <asp:ListItem Value="Van">Van</asp:ListItem>
+                                <asp:ListItem Value="Pick Up/Mini Truck">Pick Up/Mini Truck</asp:ListItem>
+                                <asp:ListItem Value="Mid Trucks">Mid Trucks</asp:ListItem>
+                                <asp:ListItem Value="Gen. Cartage/Trunk Trucks">Gen. Cartage/Trunk Trucks</asp:ListItem>
+                                <asp:ListItem Value="Tractors">Tractors</asp:ListItem>
+                                <asp:ListItem Value="Elevators">Elevators</asp:ListItem>
+                                <asp:ListItem Value="Ambulance">Ambulance</asp:ListItem>
+                                <asp:ListItem Value="Tricycle">Tricycle</asp:ListItem>
+                                <asp:ListItem Value="MotorCycle">MotorCycle</asp:ListItem>
+                                <asp:ListItem Value="Coupe">Coupe</asp:ListItem>
+                                <asp:ListItem Value="others">others</asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rvr4" runat="server" ControlToValidate="cbVehType"
+                                ErrorMessage="Vehicle Type is required!" InitialValue="NULL">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="editColC">
+                            Manufacture year
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtModelYr" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Vehicle make
+                        </td>
+                        <td class="editColB">
+                            <uc:cartype ID="cartype1" runat="server" />
+                        </td>
+                        <td class="editColC">
+                            Chassis Number
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtChassisNo" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Engine Number
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtEngineNo" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Vehicle Colour
+                        </td>
+                        <td id="Td1" class="editColD" runat="server">
+                            <asp:TextBox ID="txtVehColor" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Engine Capacity HP
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtCapacity" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Vehicle Usage
+                        </td>
+                        <td class="editColD">
+                            <asp:DropDownList ID="cdbUsage" runat="server" CssClass="dropdown">
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rvr3" runat="server" ControlToValidate="cdbUsage"
+                                ErrorMessage="Usage is required!" InitialValue="NULL">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Number of Seats
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtSeatNo" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Vehicle User
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtInsured" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </asp:Panel>
+    </td>
+</tr>
+<tr>
+    <td class="pageFilterBox">
+        <div class="pageFilterBoxHeader">
+            <mb:ExpandingImageButton ID="ExpandingImageButton3" ExpandedAlternateText="Expand this node."
+                ContractedAlternateText="Close this node." CssClass="ExpandingImageButton" ControlToToggle="Panel2"
+                ExpandedImageUrl="/webroot/web/images/icons/expanded_13.gif" ContractedImageUrl="/webroot/web/images/icons/expand_13.gif"
+                runat="server" EnableClientScript="true" Expanded="false" />
+            <label for="_ctl0_ContentPlaceHolder1_ExpandingImageButton1_clicker" style="width: 96%;
+                cursor: hand">
+                <asp:Label ID="Label2" runat="server" Text="Rescue/Tracking Details"></asp:Label></label>
+        </div>
+        <asp:Panel ID="Panel2" runat="server">
+            <table id="Table2" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tbody>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Tracking Company
+                        </td>
+                        <td class="editColB">
+                            <asp:DropDownList ID="cdbTracking" runat="server" CssClass="dropdown">
+                            </asp:DropDownList>
+                        </td>
+                        <td class="editColC">
+                            Rescue Company
+                        </td>
+                        <td class="editColD">
+                            <asp:DropDownList ID="cdbRescue" runat="server" CssClass="dropdown">
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Tracking Cost
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtTrackingCost" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Rescue Cost
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtRescueCost" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                        </td>
+                        <td class="editColD">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </asp:Panel>
+    </td>
+</tr>
+<tr>
+    <td class="pageFilterBox">
+        <div class="pageFilterBoxHeader">
+            <mb:ExpandingImageButton ID="ExpandingImageButton6" ExpandedAlternateText="Expand this node."
+                ContractedAlternateText="Close this node." CssClass="ExpandingImageButton" ControlToToggle="Panel5"
+                ExpandedImageUrl="/webroot/web/images/icons/expanded_13.gif" ContractedImageUrl="/webroot/web/images/icons/expand_13.gif"
+                runat="server" EnableClientScript="true" Expanded="false" />
+            <label for="_ctl0_ContentPlaceHolder1_ExpandingImageButton1_clicker" style="width: 96%;
+                cursor: hand">
+                <asp:Label ID="Label5" runat="server" Text="Foreign Currency"></asp:Label></label>
+        </div>
+        <asp:Panel ID="Panel5" runat="server">
+            <table id="Table5" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tbody>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Currency Types
+                        </td>
+                        <td class="editColB">
+                            <asp:DropDownList ID="cdbCurrency" runat="server" CssClass="dropdown">
+                            </asp:DropDownList>
+                        </td>
+                        <td class="editColC">
+                            Exchange Rate
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtExchRate" runat="server" CssClass="textbox">0</asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Sum Ins. (foreign)
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtFrgSumInsured" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Premium (Foreign)
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtFrgnPremium" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </asp:Panel>
+    </td>
+</tr>
+<tr>
+    <td class="pageFilterBox">
+        <div class="pageFilterBoxHeader">
+            <mb:ExpandingImageButton ID="ExpandingImageButton4" ExpandedAlternateText="Expand this node."
+                ContractedAlternateText="Close this node." CssClass="ExpandingImageButton" ControlToToggle="Panel3"
+                ExpandedImageUrl="/webroot/web/images/icons/expanded_13.gif" ContractedImageUrl="/webroot/web/images/icons/expand_13.gif"
+                runat="server" EnableClientScript="true" />
+            <label for="_ctl0_ContentPlaceHolder1_ExpandingImageButton1_clicker" style="width: 96%;
+                cursor: hand">
+                <asp:Label ID="Label3" runat="server" Text="Premium Details"></asp:Label></label>
+        </div>
+        <asp:Panel ID="Panel3" runat="server">
+            <table id="Table3" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tbody>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Vehicle Value
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtSumInsured" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Premium Rate %
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="TxtPremRate" runat="server" CssClass="textbox">0</asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Basic Premium
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtBasicPremium" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Cover Days
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtCoverDays" runat="server" CssClass="textbox"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Pro-Rata Premium
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtProRataPrem" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                        </td>
+                        <td class="editColD">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </asp:Panel>
+    </td>
+</tr>
+<tr>
+    <td class="pageFilterBox">
+        <div class="pageFilterBoxHeader">
+            <mb:ExpandingImageButton ID="ExpandingImageButton2" ExpandedAlternateText="Expand this node."
+                ContractedAlternateText="Close this node." CssClass="ExpandingImageButton" ControlToToggle="Panel1"
+                ExpandedImageUrl="/webroot/web/images/icons/expanded_13.gif" ContractedImageUrl="/webroot/web/images/icons/expand_13.gif"
+                runat="server" EnableClientScript="true" />
+            <label for="_ctl0_ContentPlaceHolder1_ExpandingImageButton1_clicker" style="width: 96%;
+                cursor: hand">
+                <asp:Label ID="Label1" runat="server" Text="Premium Details (Extra)"></asp:Label></label>
+        </div>
+        <asp:Panel ID="Panel1" runat="server">
+            <table id="Table1" cellspacing="0" cellpadding="0" width="100%" border="0">
+                <tbody>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            TPPD Value
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtTPPDValue" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Plurality Disc. %
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtPldiscRate" runat="server" CssClass="textbox" Width="37px">0.00</asp:TextBox>
+                            <asp:TextBox ID="txtPlDiscValue" runat="server" CssClass="textboxFree" Width="120px">0.00</asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            SRCC Value %
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtSRCCRate" runat="server" CssClass="textbox" Width="37px">0.00</asp:TextBox>
+                            <asp:TextBox ID="txtSRCCValue" runat="server" CssClass="textboxFree" Width="120px">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            Special Disc. %
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtSpDiscRate" runat="server" CssClass="textbox" Width="37px">0.00</asp:TextBox>
+                            <asp:TextBox ID="txtSpDiscValue" runat="server" CssClass="textboxFree" Width="120px">0.00</asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            excess BuyBack %
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtBuyBackRate" runat="server" CssClass="textbox" Width="37px">0.00</asp:TextBox>
+                            <asp:TextBox ID="txtExcessValue" runat="server" CssClass="textboxFree" Width="120px">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            No Claim Disc. %
+                        </td>
+                        <td class="editColD">
+                            <asp:TextBox ID="txtNCDRate" runat="server" CssClass="textbox" Width="37px">0.00</asp:TextBox>
+                            <asp:TextBox ID="txtNCDValue" runat="server" CssClass="textboxFree" Width="120px">0.00</asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            Net Premium Due
+                        </td>
+                        <td class="editColB">
+                            <asp:TextBox ID="txtNetPremium" runat="server" CssClass="textbox">0.00</asp:TextBox>
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editColA">
+                            &nbsp;
+                        </td>
+                        <td class="editColB">
+                            &nbsp;
+                        </td>
+                        <td class="editColC">
+                            &nbsp;
+                        </td>
+                        <td class="editColD">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </asp:Panel>
+    </td>
+</tr>
+
+<script type="text/javascript" src="/webroot/web/scripts/date.js"></script>
+<script type="text/javascript">
+
+function calcPremium()
+{
+    var txtDate1 = $get('<%=txtStartDate.ClientID %>');
+    var txtDate2 = $get('<%=txtExpiryDate.ClientID %>');
+    var txtCover = $get('<%=txtCoverdays.ClientID %>');
+
+    var txtSumIns = $get('<%=txtSumInsured.ClientID %>');
+    var txtPremRate = $get('<%=txtPremRate.ClientID %>');
+    var txtGrossPrem = $get('<%=txtBasicPremium.ClientID %>');
+    var txtPRataPrem = $get('<%=txtProRataPrem.ClientID %>');
+    var txtNetPrem = $get('<%=txtNetPremium.ClientID %>');
+    var cdbCurrency = $get('<%=cdbCurrency.ClientID %>');
+
+    var Date1 = getDateFromFormat(txtDate1.value, 'd-MMM-y');
+    var Date2 = getDateFromFormat(txtDate2.value, 'd-MMM-y');
+
+    txtCover.value = days_between(Date1, Date2) + 1;
+    txtGrossPrem.value = txtSumIns.value * txtPremRate.value / 100;
+    txtPRataPrem.value = txtSumIns.value * txtPremRate.value / 100 * txtCover.value / 365;
+    txtNetPrem.value=txtPRataPrem.value;
+    
+    var txtExchRate = $get('<%=txtExchRate.ClientID %>');
+    var txtFrgnPrem = $get('<%=txtFrgnPremium.ClientID %>');
+    var txtFrgSumIns = $get('<%=txtFrgSumInsured.ClientID %>');
+    
+    if (cdbCurrency.selectedIndex > 0) {
+        txtSumIns.value = txtExchRate.value * txtFrgSumIns.value;
+        txtGrossPrem.value = txtExchRate.value * txtFrgnPrem.value;
+    }
+}
+
+function foreignExClick() {
+    var txtExchRate = $get('<%=txtExchRate.ClientID %>');
+    var txtFrgnPrem = $get('<%=txtFrgnPremium.ClientID %>');
+    var txtFrgSumIns = $get('<%=txtFrgSumInsured.ClientID %>');
+    var cdbCurrency = $get('<%=cdbCurrency.ClientID %>');
+    
+    if (cdbCurrency.selectedIndex > 0) {
+        txtExchRate.readOnly = false;
+        txtExchRate.style.backgroundColor = 'white';
+        txtFrgnPrem.readOnly = false;
+        txtFrgnPrem.style.backgroundColor = 'white';
+        txtFrgSumIns.readOnly = false;
+        txtFrgSumIns.style.backgroundColor = 'white';
+    } else {
+        txtExchRate.readOnly = true;
+        txtExchRate.style.backgroundColor = 'whitesmoke';
+        txtFrgnPrem.readOnly = true;
+        txtFrgnPrem.style.backgroundColor = 'whitesmoke';
+        txtFrgSumIns.readOnly = true;
+        txtFrgSumIns.style.backgroundColor = 'whitesmoke';
+    }
+}
+
+function days_between(date1, date2) {
+    // The number of milliseconds in one day
+    var ONE_DAY = 1000 * 60 * 60 * 24
+    // Calculate the difference in milliseconds
+    var difference_ms = Math.abs(date1 - date2)
+    // Convert back to days and return
+    return Math.round(difference_ms/ONE_DAY)
+}
+
+</script>

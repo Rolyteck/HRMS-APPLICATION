@@ -1,0 +1,193 @@
+﻿
+Partial Class webroot_web_controls_webparts_motor
+    Inherits System.Web.UI.UserControl
+
+    Protected _ReadOnly As Boolean = False
+
+    Private Sub InitControls()
+        If Not Page.IsPostBack Then
+            mod_ui_helpers.DisableInput(Me.txtPolicyNo)
+            mod_ui_helpers.DisableInput(Me.txtExchRate)
+            mod_ui_helpers.DisableInput(Me.cdbCurrency)
+
+            Me.TxtPremRate.Attributes.Add("onkeyup", "calcPremium();")
+            Me.txtSumInsured.Attributes.Add("onkeyup", "calcPremium();")
+            Me.txtExchRate.Attributes.Add("onkeyup", "calcPremium();")
+            Me.txtFrgnPremium.Attributes.Add("onkeyup", "calcPremium();")
+            Me.txtFrgSumInsured.Attributes.Add("onkeyup", "calcPremium();")
+            Me.cdbCurrency.Attributes.Add("onchange", "foreignExClick();")
+
+            mod_combo_fill.FillCurrency(Me.cdbCurrency)
+            mod_combo_fill.FillStates(Me.cbState)
+            mod_combo_fill.FillWaxCodes(Me.cdbWaxCode)
+            mod_combo_fill.FillCoverType(Me.cdbCoverType)
+            mod_combo_fill.FillVehUsage(Me.cdbUsage)
+            mod_combo_fill.FillCompanies(Me.cdbTracking, "TRACKING")
+            mod_combo_fill.FillCompanies(Me.cdbRescue, "RESCUE")
+
+            mod_ui_helpers.MakeDatePicker(Me.Page, Me.txtEntryDate, Now)
+            mod_ui_helpers.MakeDatePicker(Me.Page, Me.txtStartDate, Now)
+            mod_ui_helpers.MakeDatePicker(Me.Page, Me.txtExpiryDate, Now.AddDays(364))
+
+            Dim EndorseType As String = Request.QueryString("type") & ""
+
+            If EndorseType <> "" Then 'endorsement page
+                Me.lbEndorseType.Text = EndorseType
+                Me.PlaceHolder1.Visible = True
+            Else 'not endorsement page
+                Me.PlaceHolder1.Visible = False
+            End If
+        End If
+    End Sub
+
+    Public Sub Initialize(ByVal Pol As Hrms3.Policy)
+        Call InitControls()
+        Me.txtPolicyNo.Text = Pol.PolicyNo
+        Me.txtExchRate.Text = Pol.ExRate & vbNullString
+        Me.cdbCurrency.SelectedValue = Pol.ExCurrency
+        Me.txtStartDate.Text = mod_ui_helpers.FormatDate(Pol.StartDate.ToString)
+        Me.txtExpiryDate.Text = mod_ui_helpers.FormatDate(Pol.EndDate.ToString)
+
+        Me.ExpandingImageButton6.Expanded = (Pol.ExCurrency <> "NAIRA")
+        Me.txtInsured.Text = Trim(Pol.InsSurname & " " & Pol.InsFirstname & " " & Pol.InsOthernames)
+    End Sub
+
+    Public Sub LoadData(ByVal rec As Hrms3.PolicyDetail)
+        Call InitControls()
+        mod_ui_helpers.DisableInput(Me.txtCertNo)
+
+        Me.txtEntryDate.Text = mod_ui_helpers.FormatDate(rec.EntryDate & vbNullString)
+        Me.txtStartDate.Text = mod_ui_helpers.FormatDate(rec.StartDate & vbNullString)
+        Me.txtExpiryDate.Text = mod_ui_helpers.FormatDate(rec.EndDate & vbNullString)
+
+        Me.txtPolicyNo.Text = rec.PolicyNo & vbNullString
+        Me.txtCertNo.Text = rec.CertOrDocNo & vbNullString
+        Me.txtInsured.Text = rec.InsuredName & vbNullString
+        Me.txtExchRate.Text = rec.ExRate & vbNullString
+        Me.cdbCurrency.SelectedValue = rec.ExCurrency
+        Me.TxtPremRate.Text = rec.PremiumRate & vbNullString
+        Me.txtSumInsured.Text = rec.SumInsured & vbNullString
+        Me.txtBasicPremium.Text = rec.GrossPremium & vbNullString
+        Me.txtCoverDays.Text = rec.ProRataDays & vbNullString
+        Me.txtProRataPrem.Text = rec.ProRataPremium & vbNullString
+        Me.txtNetPremium.Text = rec.NetAmount & vbNullString
+
+        Me.cdbTracking.SelectedValue = rec.Field1 & vbNullString
+        Me.txtTrackingCost.Text = rec.Field9 & vbNullString
+        Me.cdbRescue.SelectedValue = rec.Field2 & vbNullString
+        Me.txtRescueCost.Text = rec.Field10 & vbNullString
+
+        Me.txtVehRegNo.Text = rec.Field19 & vbNullString
+        Me.cbVehType.SelectedValue = rec.Field22 & vbNullString
+        Me.cbstate.SelectedValue = rec.Field28 & vbNullString
+        Me.txtVehColor.Text = rec.Field26 & vbNullString
+        Me.txtModelYr.Text = rec.Field25 & vbNullString
+        Me.txtCapacity.Text = rec.Field29 & vbNullString
+        Me.txtEngineNo.Text = rec.Field20 & vbNullString
+        Me.txtChassisNo.Text = rec.Field21 & vbNullString
+        Me.txtSeatNo.Text = rec.Field30 & vbNullString
+        Me.cartype1.SelectedValue = rec.Field24 & vbNullString
+        Me.cdbWaxCode.SelectedValue = rec.Field18 & vbNullString
+        Me.cdbUsage.SelectedValue = rec.Field31 & vbNullString
+        Me.cdbCoverType.SelectedValue = rec.Field17 & vbNullString
+
+        'Me.txtTPPDRate.Text = Rec.Field3 & vbNullString
+        Me.txtTPPDValue.Text = rec.Field11 & vbNullString
+        Me.txtSRCCRate.Text = rec.Field4 & vbNullString
+        Me.txtSRCCValue.Text = rec.Field12 & vbNullString
+        Me.txtBuyBackRate.Text = rec.Field5 & vbNullString
+        Me.txtExcessValue.Text = rec.Field13 & vbNullString
+        Me.txtPldiscRate.Text = rec.Field6 & vbNullString
+        Me.txtPlDiscValue.Text = rec.Field14 & vbNullString
+        Me.txtSpDiscRate.Text = rec.Field7 & vbNullString
+        Me.txtSpDiscValue.Text = rec.Field15 & vbNullString
+        Me.txtNCDRate.Text = rec.Field8 & vbNullString
+        Me.txtNCDValue.Text = rec.Field16 & vbNullString
+
+        Me.ExpandingImageButton6.Expanded = False
+    End Sub
+
+    Public Function GetData(ByVal rec As Hrms3.PolicyDetail, ByVal ForUpdate As Boolean) As Hrms3.PolicyDetail
+
+        If ForUpdate Then 'for update
+            'rec.PolicyNo         can't change
+            'rec.EndorsementNo    can't change
+            'rec.BizOption        can't change
+            'rec.DNCNNo           can't change
+            'rec.CertOrDocNo      can't change
+            'rec.EntryDate        can't change
+
+            rec.ModifiedBy = mod_main.getLoggedOnUsername()
+            rec.ModifiedOn = DateTime.Now
+
+        Else 'for insert
+            rec.PolicyNo = Me.txtPolicyNo.Text
+            rec.EndorsementNo = Me.txtEndorseNo.Text
+            'rec.BizOption = 'depends on edit type NEW/FACIN/TREATY
+            rec.DNCNNo = "" 'not known yet
+            rec.CertOrDocNo = Me.txtCertNo.Text
+            rec.EntryDate = CDate(Me.txtEntryDate.Text).Add(Now.TimeOfDay)
+
+            rec.SubmittedBy = mod_main.getLoggedOnUsername()
+            rec.SubmittedOn = DateTime.Now
+        End If
+
+        rec.InsuredName = Me.txtInsured.Text
+        rec.StartDate = CDate(Me.txtStartDate.Text).Add(Now.TimeOfDay)
+        rec.EndDate = CDate(Me.txtExpiryDate.Text).Add(Now.TimeOfDay)
+        rec.ExRate = Val(Me.txtExchRate.Text)
+        rec.ExCurrency = Me.cdbCurrency.SelectedValue
+        rec.PremiumRate = Val(Me.TxtPremRate.Text)
+        rec.ProportionRate = 100
+        rec.SumInsured = Val(Me.txtSumInsured.Text)
+        rec.GrossPremium = Val(Me.txtBasicPremium.Text)
+        'rec.SumInsuredFrgn = Val(Me.txtSumInsured.Text) / Val(Me.TxtPremRate.Text)
+        'rec.GrossPremiumFrgn = Val(Me.txtBasicPremium.Text) / Val(Me.TxtPremRate.Text)
+        rec.ProRataDays = Val(Me.txtCoverDays.Text)
+        rec.ProRataPremium = Val(Me.txtProRataPrem.Text)
+        rec.NetAmount = Val(Me.txtNetPremium.Text)
+        rec.Deleted = 0
+        rec.Active = 1
+
+        'add other specific details
+        rec.Field19 = Me.txtVehRegNo.Text
+        rec.Field22 = Me.cbVehType.SelectedValue
+        rec.Field28 = Me.cbstate.SelectedValue
+        rec.Field26 = Me.txtVehColor.Text
+        rec.Field25 = Me.txtModelYr.Text
+        rec.Field29 = Me.txtCapacity.Text
+        rec.Field20 = Me.txtEngineNo.Text
+        rec.Field21 = Me.txtChassisNo.Text
+        rec.Field30 = Me.txtSeatNo.Text
+        rec.Field24 = Me.cartype1.SelectedValue
+        rec.Field18 = Me.cdbWaxCode.SelectedValue
+        rec.Field31 = Me.cdbUsage.SelectedValue
+        rec.Field17 = Me.cdbCoverType.SelectedValue
+        rec.Field1 = Me.cdbTracking.SelectedValue
+        rec.Field9 = Me.txtTrackingCost.Text
+        rec.Field2 = Me.cdbRescue.SelectedValue
+        rec.Field10 = Me.txtRescueCost.Text
+        'Rec.Field3 = Me.txtTPPDRate.Text
+        rec.Field11 = Me.txtTPPDValue.Text
+        rec.Field4 = Me.txtSRCCRate.Text
+        rec.Field12 = Me.txtSRCCValue.Text
+        rec.Field5 = Me.txtBuyBackRate.Text
+        rec.Field13 = Me.txtExcessValue.Text
+        rec.Field6 = Me.txtPldiscRate.Text
+        rec.Field14 = Me.txtPlDiscValue.Text
+        rec.Field7 = Me.txtSpDiscRate.Text
+        rec.Field15 = Me.txtSpDiscValue.Text
+        rec.Field8 = Me.txtNCDRate.Text
+        rec.Field16 = Me.txtNCDValue.Text
+        Return rec
+    End Function
+
+    Public Property [ReadOnly]() As Boolean
+        Get
+            Return _ReadOnly
+        End Get
+        Set(ByVal value As Boolean)
+            _ReadOnly = value
+        End Set
+    End Property
+End Class
