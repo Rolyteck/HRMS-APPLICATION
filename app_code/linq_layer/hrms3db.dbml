@@ -1,0 +1,1204 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HRMS2DB_CHI" EntityNamespace="Hrms3" ContextNamespace="Hrms3" Class="hrms3dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=INTTECK5\STUDIO;Initial Catalog=HRMS2DB_CHI;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HRMS2DB_CHIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AuditLogs" Member="AuditLogs">
+    <Type Name="AuditLog">
+      <Column Name="AuditLogID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LogType" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AutoNumbers" Member="AutoNumbers">
+    <Type Name="AutoNumber">
+      <Column Name="NumType" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BranchID" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NextValue" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Format" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Sample" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Branches" Member="Branches">
+    <Type Name="Branch">
+      <Column Name="BranchID" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RegionID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="StateID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="BranchID2" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Manager" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="LandPhone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Companies" Member="Companies">
+    <Type Name="Company">
+      <Column Name="CompanyID" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="CompanyType" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="LandPhone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Modifiedby" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Regions" Member="Regions">
+    <Type Name="Region">
+      <Column Name="RegionID" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Manager" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="LandPhone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Modifiedby" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RolePermissions" Member="RolePermissions">
+    <Type Name="RolePermission">
+      <Column Name="RoleID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="PermissionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="RoleID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleDescription" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.States" Member="States">
+    <Type Name="State">
+      <Column Name="StateID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserBranches" Member="UserBranches">
+    <Type Name="UserBranch">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="BranchID" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRoles" Member="UserRoles">
+    <Type Name="UserRole">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HPayDept" Member="HPayDepts">
+    <Type Name="HPayDept">
+      <Column Name="Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HPaySection" Member="HPaySections">
+    <Type Name="HPaySection">
+      <Column Name="Code" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Section" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRAttendance" Member="HRAttendances">
+    <Type Name="HRAttendance">
+      <Column Name="AttendID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AbsentDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Reasons" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRCompensation" Member="HRCompensations">
+    <Type Name="HRCompensation">
+      <Column Name="CaseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CaseDesc" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="IncidentDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IncidentTime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NotifyDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Death" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DayAway" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="DayRestricted" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="MedCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OtherCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InjuryDetails" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="PartsDesc" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Object" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Premises" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LocDetails" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRCompVehicle" Member="HRCompVehicles">
+    <Type Name="HRCompVehicle">
+      <Column Name="VehicleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="CompVehicle" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Make" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="DriverLicNo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="LicExpDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AssignDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ExpReturnDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ActReturnDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRDiscipline" Member="HRDisciplines">
+    <Type Name="HRDiscipline">
+      <Column Name="DisciplineID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="DisplineType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DisDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DisciplineOfficer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRDisciplineType" Member="HRDisciplineTypes">
+    <Type Name="HRDisciplineType">
+      <Column Name="DisTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DisType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HREducation" Member="HREducations">
+    <Type Name="HREducation">
+      <Column Name="EducationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeNo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SchoolAttend" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Dfrom" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Dto" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CertObtained" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="Char(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRExperience" Member="HRExperiences">
+    <Type Name="HRExperience">
+      <Column Name="ExperienceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="OrgName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="EDFrom" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EDTo" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PostHeld" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Achievements" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRHobbies" Member="HRHobbies">
+    <Type Name="HRHobby">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="A1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRLang" Member="HRLangs">
+    <Type Name="HRLang">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="A1" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRProfQ" Member="HRProfQs">
+    <Type Name="HRProfQ">
+      <Column Name="ProfQualificationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="QualObtained" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="QualDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ProfBodies" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRProperty" Member="HRProperties">
+    <Type Name="HRProperty">
+      <Column Name="PptyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PtyName" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="PtyDesc" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="IssuedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ReturnedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PtyNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PtyRemarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRSteps" Member="HRSteps">
+    <Type Name="HRStep">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRTrainingNeeds" Member="HRTrainingNeeds">
+    <Type Name="HRTrainingNeed">
+      <Column Name="TrainNeedID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TrainingCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TrainingDesc" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="CurrentJob" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="JobRelated" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Certify" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LeaveType" Member="LeaveTypes">
+    <Type Name="LeaveType">
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LeaveType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaySheets" Member="PaySheets">
+    <Type Name="PaySheet">
+      <Column Name="SheetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PaySheet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Frequency" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Allowances" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Deductions" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="GroupRates" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Variables" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurCategories" Member="PurCategories">
+    <Type Name="PurCategory">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FamilyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurFamilies" Member="PurFamilies">
+    <Type Name="PurFamily">
+      <Column Name="FamilyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FamilyName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurPartners" Member="PurPartners">
+    <Type Name="PurPartner">
+      <Column Name="PartnerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="PartnerName" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactName" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Phone2" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurProducts" Member="PurProducts">
+    <Type Name="PurProduct">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductNo" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReorderQty" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ReorderLevel" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="OptionType" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VPayAllowance" Member="VPayAllowances">
+    <Type Name="VPayAllowance">
+      <Column Name="AllowID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AllowName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Value1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Descrption" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VPayDeductions" Member="VPayDeductions">
+    <Type Name="VPayDeduction">
+      <Column Name="DedID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DedName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Value1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Value2" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRReferees" Member="HRReferees">
+    <Type Name="HRReferee">
+      <Column Name="RefereeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RefName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRAppraisal" Member="HRAppraisals">
+    <Type Name="HRAppraisal">
+      <Column Name="AppraisalID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="AppDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Score" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Objective" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="BaseDesc" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PromotionView1" Member="PromotionView1s">
+    <Type Name="PromotionView1">
+      <Column Name="PromotionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SheetID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Step" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ProDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="BS" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="HA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="YGPay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="YTax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TransSTATUS" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="TransGUID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AllowanceID" Member="AllowanceIDs">
+    <Type Name="AllowanceID">
+      <Column Name="AllowID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AllowName" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeductionID" Member="DeductionIDs">
+    <Type Name="DeductionID">
+      <Column Name="DedID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DedName" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRPromotion" Member="HRPromotions">
+    <Type Name="HRPromotion">
+      <Column Name="PromotionID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SheetID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Step" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ProDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="BS" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="HA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="YGPay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="YTax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TransSTATUS" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="TransGUID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MktContacts" Member="MktContacts">
+    <Type Name="MktContact">
+      <Column Name="MktContactID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="InsuredID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Subject" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="MsgType" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SentTo" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Cc" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Bcc" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Appraisals" Member="Appraisals">
+    <Type Name="Appraisal">
+      <Column Name="AppraisalID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SN" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="GradeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Appraisals" Type="System.String" DbType="VarChar(1800)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transactions" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VoucherNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Trans_Type" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="PartnerID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="PartnerName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TransGUID" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModiffiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModiffiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TransactionDetails" Member="TransactionDetails">
+    <Type Name="TransactionDetail">
+      <Column Name="DetailsID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="QtyOrder" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="SellingPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InvoiceID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QtyLoaded" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HPayAllowance" Member="HPayAllowances">
+    <Type Name="HPayAllowance">
+      <Column Name="HID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AllowID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AllowName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Value1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Steps" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="GradeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HPayDeductions" Member="HPayDeductions">
+    <Type Name="HPayDeduction">
+      <Column Name="HID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DedID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DedName" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Value1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Steps" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="GradeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DSTATUS" Type="System.Char" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Settings" Member="Settings">
+    <Type Name="Setting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Setting" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoanAccts" Member="LoanAccts">
+    <Type Name="LoanAcct">
+      <Column Name="LoanAcctID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="LoanType" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="MonthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DedID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LoanName" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="LoanAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IntRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NetLoanAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="IntAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MonthLoanAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PrincipalAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="A2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Period" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TransSTATUS" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="TransGuid" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Submittedby" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TrainingCadres" Member="TrainingCadres">
+    <Type Name="TrainingCadre">
+      <Column Name="Code" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(110)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="PwdExpiry" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SecQuestion" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SecAnswer" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMedical" Member="HRMedicals">
+    <Type Name="HRMedical">
+      <Column Name="MedID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AdmType" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Days" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="TreatDesc" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="medHospital" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="MedicalLimit" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MedicalCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LimitBalance" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Approval" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submittedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HPayGrade" Member="HPayGrades">
+    <Type Name="HPayGrade">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StaffGrpID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRMedDetails" Member="HRMedDetails">
+    <Type Name="HRMedDetail">
+      <Column Name="MedDetailsID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Bloodgrp" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Disable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Allergics" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Conditions" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="MedicalLimits" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserPermission" Member="UserPermissions">
+    <Type Name="UserPermission">
+      <Column Name="UserID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PermissionID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRLeave" Member="HRLeaves">
+    <Type Name="HRLeave">
+      <Column Name="LeaveID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeNo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="LeaveType" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="LDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DMY" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LeaveArrears" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LeaveAllow" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Purpose" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Approval" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Permissions" Member="Permissions">
+    <Type Name="Permission">
+      <Column Name="PermissionID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PermissionName" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Module" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRLGAs" Member="HRLGAs">
+    <Type Name="HRLGA">
+      <Column Name="LGAID" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LGAName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StateID" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryID" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="LgaSign" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRStates" Member="HRStates">
+    <Type Name="HRState">
+      <Column Name="StateID" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StateName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StateCountry" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="StateSign" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HRTrainHistory" Member="HRTrainHistories">
+    <Type Name="HRTrainHistory">
+      <Column Name="TrainHisID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TrainDesc" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Frequency" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="TrainCadreID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="TrainCadre" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="TrainVenue" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Organisers" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="CourseCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AccomCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TranspCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="feedingCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReimbDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CertObtained" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Approval" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submittedby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Approvedby" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoanType" Member="LoanTypes">
+    <Type Name="LoanType">
+      <Column Name="TypeID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LoanType" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="LoanRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="A1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A2" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaySlips" Member="PaySlips">
+    <Type Name="PaySlip">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SheetID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="OtherNames" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Period" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Basic" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Housing" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Transport" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A2" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A3" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A4" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A5" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A6" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A7" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A8" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A9" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A10" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A11" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A12" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A13" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A14" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A15" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A16" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A17" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A18" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A19" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A20" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A21" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A22" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A23" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A24" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A25" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A26" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A27" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A28" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A29" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="A30" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ATotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="GrossPay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D2" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D3" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D4" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D5" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D6" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D7" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D8" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D9" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D10" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D11" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D12" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D13" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D14" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D15" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D16" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D17" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D18" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D19" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D20" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D21" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D22" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D23" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D24" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D25" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D26" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D27" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D28" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D29" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D30" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D31" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D32" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D33" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D34" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D35" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D36" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D37" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D38" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D39" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D40" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D41" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D42" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D43" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D44" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D45" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D46" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D47" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D48" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D49" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="D50" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NetPay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Confirmation" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="BranchID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="DeptID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="UnitID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Step" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GradeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="EmployeeStatus" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TransGUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TransSTATUS" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BatchGUID" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Loans" Member="Loans">
+    <Type Name="Loan">
+      <Column Name="LoanID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Othernames" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="TransactionType" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="DedID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="LoanName" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="AmtPaid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TotalAmtDue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InterestRate" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IntAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MonthlyDed" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Duration" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Tdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="TransSTATUS" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Submittedby" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Approvedby" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HREmployees" Member="HREmployees">
+    <Type Name="HREmployee">
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StaffIDNo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="OtherNames" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="MaritalStatus" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="StateOrigin" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="NationalIDNo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AcctNo1" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AcctName1" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AcctNo2" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="AcctName2" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HMOName" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HMOID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="BranchID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Branch" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="DeptID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Dept" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="UnitID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="GradeID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="HireDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="MobilePhone" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="NextKin" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="KinAddress" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="KinPhone" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="KinRelationship" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Height" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Weight" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Smoker" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DisableType" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PayFirstMonth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SheetID2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConfirmStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ConfirmDuration" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ConfirmationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RetiredDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.assPurchase" Member="assPurchases">
+    <Type Name="assPurchase">
+      <Column Name="Asset_Code" Type="System.String" DbType="VarChar(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Asset" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="LocationID" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Trans_Type" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Purchase_Date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Invoice_No" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Purchase_Amt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DisposedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DisposalAmt" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CumDep" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NBV" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BankCode" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="ChequeDetail" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Optiontype" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="LastDeprMonth" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TransSTATUS" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="TransGUID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="SubmittedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="SubmittedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ApprovedBy" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ApprovedOn" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetEmployeePreviousBillCummulative" Method="GetEmployeePreviousBillCummulative">
+    <Parameter Name="EmployeeID" Parameter="employeeID" Type="System.String" DbType="VarChar(32)" />
+    <ElementType Name="GetEmployeePreviousBillCummulativeResult">
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MedicalCost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RunNextMonthPayrollDetails" Method="RunNextMonthPayrollDetails">
+    <Parameter Name="Month_1" Parameter="month_1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SheetID" Parameter="sheetID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NextMonth_1" Parameter="nextMonth_1" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="SubmittedBy" Parameter="submittedBy" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="BatchGuid" Parameter="batchGuid" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HRGetEmployeeLastPromotion" Method="HRGetEmployeeLastPromotion">
+    <Parameter Name="EmployeeID" Parameter="employeeID" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="HRGetEmployeeLastPromotionResult">
+      <Column Name="PromotionID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="SheetID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Grade" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Step" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="ProDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="BS" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="HA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="YGPay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="YTax" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TransSTATUS" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="TransGUID" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Tag" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Active" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Submitby" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SubmitOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ModifiedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaySheet" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEmployeeIDSummary" Method="GetEmployeeIDSummary">
+    <Parameter Name="PaidID" Parameter="paidID" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetEmployeeIDSummaryResult">
+      <Column Name="EmployeeID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FinalGrossPay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FinalDeductions" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FinalNetPay" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

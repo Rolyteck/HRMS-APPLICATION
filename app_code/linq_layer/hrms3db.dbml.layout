@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 43.625, 26.625" name="hrms3db">
+  <DataContextMoniker Name="/hrms3dbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="fdab46e4-1b7b-4167-aecc-ec09d4c1f4f2" absoluteBounds="3.875, 1.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/hrms3dbDataContext/AuditLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dedfad3a-36e4-4970-8014-051e68f9e6ca" absoluteBounds="3.89, 1.585, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cabc4743-da4a-4c91-8b8f-f678cbc88f33" absoluteBounds="4.25, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/hrms3dbDataContext/AutoNumber" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca01d79d-2d34-40b8-b820-2a707a427dfc" absoluteBounds="4.265, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad3a1ac5-8de5-41b9-8797-b4f8dbb1082b" absoluteBounds="5.75, 0.625, 2, 4.2708154296875">
+      <DataClassMoniker Name="/hrms3dbDataContext/Branch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="269af5be-6fa5-4852-8d50-9a02039f4fec" absoluteBounds="5.765, 1.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9792fdef-18b6-43d2-8ba3-4fec5a8d6dc5" absoluteBounds="5.375, 1.625, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/hrms3dbDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae8ccfae-76e4-48a6-8069-25145cb0e1b1" absoluteBounds="5.39, 2.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9f28c32-f2e7-4f37-8e59-e23376b7cbe1" absoluteBounds="6.875, 1, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/hrms3dbDataContext/Region" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4002e859-25f4-429d-b7f7-47a5766bb95f" absoluteBounds="6.89, 1.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a677e1f-e8ba-474a-9c46-6027522e41a2" absoluteBounds="5.625, 5.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/hrms3dbDataContext/RolePermission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6ad8cb5-778d-4aca-ab11-806cc1dc65f1" absoluteBounds="5.64, 6.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa77801a-3714-474f-90e4-f9212994096a" absoluteBounds="3.5, 1.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/hrms3dbDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75b22f03-16cf-4f2a-b14f-55f1337c9784" absoluteBounds="3.5149999999999997, 2.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ab2c9b5-eed4-4506-a294-007cad729cf2" absoluteBounds="7.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/hrms3dbDataContext/State" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a6796673-e918-42ea-975a-772f95d8d246" absoluteBounds="7.5150000000000006, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2ee23d6-c50e-40c9-9727-faf3aa1bccfa" absoluteBounds="4.625, 3.75, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/hrms3dbDataContext/UserBranch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcc6dc0a-8f3e-4306-943c-8383eeeb8096" absoluteBounds="4.6400000000000006, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a7810ab-f663-442e-af03-8efa03c82397" absoluteBounds="5.125, 3.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/hrms3dbDataContext/UserRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59fd072a-c168-49d6-8c01-4640974c9b05" absoluteBounds="5.1400000000000006, 3.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c843c6a7-b6da-4634-834d-162fd98283c5" absoluteBounds="9.25, 4.25, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HPayDept" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ce582f0-0667-4b07-92c8-4b728ecce084" absoluteBounds="9.265, 4.71, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="28506787-5e50-4ec7-9081-7b56f196ddd2" absoluteBounds="13.625, 0.625, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/hrms3dbDataContext/HPaySection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3776b918-26cc-4caf-a103-def8867eb866" absoluteBounds="13.64, 1.085, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39bb0947-fc41-43fa-86ad-5096d338d121" absoluteBounds="15.875, 0.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRAttendance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47c7c105-ae8f-4b01-8386-af384a51b1d0" absoluteBounds="15.89, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e831672-3749-4be2-8ca2-e9ad66234da0" absoluteBounds="16.5, 4, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRCompensation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59404c0a-8662-4a0b-b138-40f4368c0b2c" absoluteBounds="16.515, 4.46, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d19b2db-04cd-442c-ba4f-1c6a2b9c1a99" absoluteBounds="11.375, 7.125, 2, 4.2708154296875005">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRCompVehicle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6be63343-8b4e-4763-a1f0-0206a574196f" absoluteBounds="11.39, 7.585, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="52510b4a-4dbe-4f79-abf4-e1d452cb3cc7" absoluteBounds="13.75, 7.375, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRDiscipline" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b627123-8d4c-4d4c-856d-5fe2a797fc9e" absoluteBounds="13.765, 7.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3709679b-cb53-4deb-bf65-7cc83b98dd38" absoluteBounds="12.625, 9.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRDisciplineType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fae8001b-b833-432f-a3fc-7a70bfc42214" absoluteBounds="12.64, 9.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2e369a6-b113-4553-9a22-6096daeef106" absoluteBounds="16.25, 9.375, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/hrms3dbDataContext/HREducation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4486abe0-fb1a-40e9-86ba-823e3d31666f" absoluteBounds="16.265, 9.835, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43f9fcf9-9054-4f79-82d9-29dc6b8724ad" absoluteBounds="9.375, 6.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRExperience" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5feb50a-3e5a-42a7-84e9-20d7687fc00b" absoluteBounds="9.39, 7.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e5b941bd-afe7-4eca-8977-fa42ac7a12c2" absoluteBounds="14.5, 8, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRHobby" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54f37ed2-ea6b-4d0e-a18e-cd552f4e5a3e" absoluteBounds="14.515, 8.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6422cf5-fc45-4b42-9cd0-c61c0e7e1f18" absoluteBounds="19.25, 5, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRLang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b57ac26-e6e4-436a-a0e8-98b99f4bde8e" absoluteBounds="19.265, 5.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a69862c-a3a8-4cb3-9074-a9e9b6fed98d" absoluteBounds="24.625, 4.875, 2, 3.1170068359374996">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRProfQ" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33493447-7618-4a93-b13b-7ad1dc20a9ad" absoluteBounds="24.64, 5.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03bd3338-ad28-4910-8cac-c89ebbc6d32c" absoluteBounds="27.75, 2.875, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRProperty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f754f1fd-6028-4750-972d-b0ead7a36e09" absoluteBounds="27.765, 3.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8213cb1b-51c4-477a-a478-9f9f95437f13" absoluteBounds="28.5, 8.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRStep" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49ad44ae-f579-4a97-ac2b-fb29b878b8b0" absoluteBounds="28.515, 8.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b174a9e-fe54-4f1a-82c7-64cbe60664c2" absoluteBounds="32, 4.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRTrainingNeed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e229c591-2f40-4639-bfa9-6d81d0cf37b0" absoluteBounds="32.015, 5.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="05277340-d80c-459b-b1e2-31bcdc80f889" absoluteBounds="26.875, 6.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/hrms3dbDataContext/LeaveType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7998edb-19a2-4f6a-b149-43ae13ccc8e3" absoluteBounds="26.89, 6.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cdba35e4-0ff6-4ede-a8ed-7c48d045da7d" absoluteBounds="24.25, 10.375, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/hrms3dbDataContext/PaySheet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4195257-5a88-4120-ba9c-039cb2c26775" absoluteBounds="24.265, 10.835, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f26b2322-a94c-4e95-8527-b8d22dc4b04c" absoluteBounds="25.25, 0.5, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/hrms3dbDataContext/PurCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a98a6549-5672-4906-a130-ab8035eb2d9a" absoluteBounds="25.265, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="765dc5d3-a154-47f0-a64d-47ff32f6a441" absoluteBounds="31.75, 3, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/hrms3dbDataContext/PurFamily" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cc09559-4e7d-440e-aaa1-16d90cf4cdd6" absoluteBounds="31.765, 3.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b40fba0-d355-4122-b8da-b56cff813518" absoluteBounds="29.375, 2.625, 2, 4.2708154296875">
+      <DataClassMoniker Name="/hrms3dbDataContext/PurPartner" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58385a2e-fd74-409b-b68c-7b7dd4b95278" absoluteBounds="29.39, 3.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2ff8c66-c7e6-4f4e-9f87-6951b56d5ef0" absoluteBounds="33.75, 0.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/hrms3dbDataContext/PurProduct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9b86b8d-3ccb-462e-838c-b0aff0b45a4e" absoluteBounds="33.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1dbce3a3-7a69-4ea3-b544-2270c942738c" absoluteBounds="9.25, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/hrms3dbDataContext/VPayAllowance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5cc35fc8-722a-4941-8024-d64ce4076ba1" absoluteBounds="9.265, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="257fb15c-b8f1-45c5-889a-48b8202c1344" absoluteBounds="11.625, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/hrms3dbDataContext/VPayDeduction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f05bf95-f758-4641-ac1a-b895161393ed" absoluteBounds="11.64, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="37bed425-876a-4242-b242-ef5f33b147c9" absoluteBounds="12.125, 2.625, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRReferee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="180223ea-329c-492b-99a1-ecc300726bf5" absoluteBounds="12.14, 3.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab8a1e11-2e89-41a2-ad42-65c162e6da8e" absoluteBounds="18.25, 0.5, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRAppraisal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1d79627-fd54-46dd-9e93-afcb7b468b61" absoluteBounds="18.265, 0.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b098345-a214-4672-9bb1-09f9df7bb899" absoluteBounds="29.625, 7.375, 2, 4.8477197265625005">
+      <DataClassMoniker Name="/hrms3dbDataContext/PromotionView1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09e697fa-58bc-403a-ae31-6f132bf17c3d" absoluteBounds="29.64, 7.835, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a937650a-28dd-4908-9e37-ea604465a772" absoluteBounds="32, 9.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/hrms3dbDataContext/AllowanceID" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90febd4d-8c33-482e-84c2-fcf16945e581" absoluteBounds="32.015, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb0d4339-417d-4663-a2b3-8bbda0013335" absoluteBounds="31.875, 10.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/hrms3dbDataContext/DeductionID" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6bdabd2-7a18-439d-a700-9fabd4e74fd0" absoluteBounds="31.89, 10.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f677d20-4341-4f88-9fd1-16cce7f7f8b0" absoluteBounds="29.5, 10.875, 2, 4.8477197265625005">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRPromotion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a6b1929-6ec4-4cea-975e-1bd5a29ff0f4" absoluteBounds="29.515, 11.335, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a13df65-b677-49a6-aa6c-5b91ed1937f0" absoluteBounds="4, 6.625, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/hrms3dbDataContext/MktContact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92966c33-8d20-4651-9b80-d8777f13b94c" absoluteBounds="4.015, 7.085, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77857153-45fc-410c-bac2-3f94d1fed99c" absoluteBounds="20.125, 1.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/hrms3dbDataContext/Appraisal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab2f473b-bc47-4dcf-b5a4-16dcfc9ab004" absoluteBounds="20.14, 1.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b97ef4ee-89ae-4da3-b6a3-6bb54ee44c8c" absoluteBounds="6.375, 6.5, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/hrms3dbDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36c2f953-0578-4cd0-98d3-c444f1acc177" absoluteBounds="6.3900000000000006, 6.96, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="485c6015-6624-40a6-b3b9-da76f43a015d" absoluteBounds="4.875, 10, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/hrms3dbDataContext/TransactionDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ca70f67-1f02-44d9-872f-241969b7e806" absoluteBounds="4.8900000000000006, 10.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2fb56e1-2f4b-4e13-9df1-2493654ac088" absoluteBounds="9.875, 2.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/hrms3dbDataContext/HPayAllowance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7104600-a6b7-49ff-b474-fa4126d6e2f1" absoluteBounds="9.89, 2.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="efa9d930-fc01-4fe9-bfa8-f9296fb6dfb7" absoluteBounds="13.125, 3.25, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HPayDeduction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67c045dd-1056-4abc-8dc6-f067abd6db9b" absoluteBounds="13.14, 3.7100000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="628fbf5c-0d88-4925-829d-5ad5d5fb2271" absoluteBounds="3.25, 7.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/hrms3dbDataContext/Setting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60f69575-3060-4d46-8fb8-a3c5478a1635" absoluteBounds="3.2649999999999997, 8.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93ce3349-4334-4b4a-9841-a1133bff017a" absoluteBounds="2, 9.25, 2, 5.4246240234375">
+      <DataClassMoniker Name="/hrms3dbDataContext/LoanAcct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7d57f7a-3490-408b-a9c6-2cbd9c5e825b" absoluteBounds="2.015, 9.71, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a590315-0f29-4a09-a400-66659704011d" absoluteBounds="6.875, 7.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/hrms3dbDataContext/TrainingCadre" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c06e35c0-33dd-43a4-9650-8d3ec6bda9be" absoluteBounds="6.89, 7.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f569895d-18ee-4357-bd27-c295ace644fb" absoluteBounds="0.75, 4.75, 2, 4.2708154296875">
+      <DataClassMoniker Name="/hrms3dbDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a3255cd-ef1a-4c0b-bef1-1b880e9fc5ae" absoluteBounds="0.76500000000000012, 5.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="880d9352-dd89-4d6e-b537-7661931c6f3a" absoluteBounds="21.875, 9, 2, 5.2323225911458326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRMedical" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85f04a25-b685-4868-bec1-39d706c5474a" absoluteBounds="21.89, 9.46, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c986de8f-518f-47dc-8168-8c38fb0f73a5" absoluteBounds="12, 5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/hrms3dbDataContext/HPayGrade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="083c0bde-f4ff-48b9-af0f-da4b9bcf21a2" absoluteBounds="12.015, 5.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de34575d-31a5-4793-a954-ab05f4a97d8a" absoluteBounds="21.875, 5.5, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRMedDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc18cdfc-84b6-44b6-812b-fc802a9871c6" absoluteBounds="21.89, 5.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70eb3131-92fd-4825-b845-371f86eb64c9" absoluteBounds="3.25, 4.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/hrms3dbDataContext/UserPermission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f8aee3bf-5740-4f93-a56f-cac135e249a2" absoluteBounds="3.265, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6ee3778-735f-489e-8273-a2113594c98e" absoluteBounds="19, 8, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRLeave" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70009fdd-3615-44e7-bbf2-b9699337ea9f" absoluteBounds="19.015, 8.46, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38506706-480f-4172-aaf6-48961cf1b337" absoluteBounds="3, 3.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/hrms3dbDataContext/Permission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f215f941-a49b-4d1e-b3d7-8b94d41aee3d" absoluteBounds="3.015, 3.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d8061c3-d44d-456c-8abe-22c53cd2a036" absoluteBounds="0.5, 3.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRLGA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="917a72b0-3131-45ac-9cc0-5b3cfff80acf" absoluteBounds="0.515, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9badd7e-fd6b-40d7-8d17-f8f412399368" absoluteBounds="0.5, 3.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRState" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e8a426f-d619-40d0-af32-71b51b0bd6a6" absoluteBounds="0.515, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbbad48b-e5ef-4079-910d-531748e29193" absoluteBounds="23.125, 1.75, 2, 6.3861311848958326">
+      <DataClassMoniker Name="/hrms3dbDataContext/HRTrainHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="103b2556-20e3-4caf-803b-4fdea19b4263" absoluteBounds="23.14, 2.21, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56840200-e409-4310-bd7c-d9d5d735bd86" absoluteBounds="0.5, 2.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/hrms3dbDataContext/LoanType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="445bad2a-c8af-4fde-82ef-3f3f2d9f1b34" absoluteBounds="0.515, 3.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53370623-9b27-4806-a572-bd0b77bfb141" absoluteBounds="36.625, 4.625, 2, 21.770245768229167">
+      <DataClassMoniker Name="/hrms3dbDataContext/PaySlip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b77ba11c-f9a9-48c0-a8e1-2478ab891f72" absoluteBounds="36.64, 5.085, 1.9700000000000002, 21.210245768229164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a737d6b6-2e75-48c9-857e-3a8d99455616" absoluteBounds="25.875, 8.375, 2, 5.8092268880208326">
+      <DataClassMoniker Name="/hrms3dbDataContext/Loan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7442cded-e928-4abe-be33-95820ec5b95e" absoluteBounds="25.89, 8.835, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="40916429-2f1d-47af-9e31-15a14706de76" absoluteBounds="40.125, 2.5, 3.25, 11.385968424479165">
+      <DataClassMoniker Name="/hrms3dbDataContext/HREmployee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33d3ecbf-6700-4395-a57b-a06a824f33ed" absoluteBounds="40.14, 2.96, 3.2199999999999998, 10.825968424479166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d73dd1ef-c445-4b47-b559-16c8dbbe9b8e" absoluteBounds="2.375, 0.625, 2, 7.1553369140625">
+      <DataClassMoniker Name="/hrms3dbDataContext/assPurchase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89071b43-2eaa-46e9-b055-5995fca271cf" absoluteBounds="2.39, 1.085, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
